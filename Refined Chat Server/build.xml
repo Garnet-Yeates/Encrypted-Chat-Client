@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="createjars" name="Create Runnable Jar for Project Refined Chat Server">
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.workspace" value="C:/Users/yeatesg/data_structures"/>
+    <property name="dir.jarfile" value="${dir.buildfile}/jars"/>
+    <target name="createjars">
+    	<delete file = "${dir.jarfile}/Launch-Server.jar"/>
+    	<delete file = "${dir.jarfile}/Launch-Client.jar"/>
+        <jar destfile="${dir.jarfile}/Launch-Server.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="edu.wit.yeatesg.refinedchatserver.launchconfigs.LaunchServer"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="${dir.buildfile}/bin"/>
+        </jar>
+        <jar destfile="${dir.jarfile}/Launch-Client.jar" filesetmanifest="mergewithoutmain">
+              <manifest>
+                  <attribute name="Main-Class" value="edu.wit.yeatesg.refinedchatserver.launchconfigs.LaunchClient"/>
+                  <attribute name="Class-Path" value="."/>
+              </manifest>
+              <fileset dir="${dir.buildfile}/bin"/>
+          </jar>
+    </target>
+</project>

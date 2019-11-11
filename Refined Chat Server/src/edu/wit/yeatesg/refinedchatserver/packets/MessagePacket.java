@@ -97,9 +97,6 @@ public class MessagePacket extends Packet
 		return senderColor;
 	}
 
-	// hello
-	// 01234
-	
 	public String removeExtraSpaces(String s)
 	{
 		while (s.substring(s.length() - 1) == " ") // Remove trailing spaces first
